@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sweet Memory Game - HTML5, JS and SCSS</title>
+  
+  
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Coda'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/sweetalert2/3.0.3/sweetalert2.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'>
+      <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+	<div class="container" width="100%" height="250" style="z-index:-1">
+		<svg width="100%" height="250" viewbox="0 0 250 250" >
+			<path id="border" transform="translate(125, 125)" />
+			<path id="loader" transform="translate(125, 125) scale(.84)" />
+		</svg>
+	</div>
+  <div id="score-panel">
+	<span class="moves">0</span> Right Answers
+	<div class="restart">
+		<i class="fa fa-repeat"></i>
+	</div>
+	<div id=question class=questionUI> Question</div>
+	<div>
+  <input type="text" id="answer_input" class="answer_input" placeholder="?">
+	</div>	
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/sweetalert2/3.0.3/sweetalert2.min.js'></script>
+<script src="../utils/utils.js" type="text/javascript"></script>
+  <script  src="js/index.js"></script>
+  
+
+    
+
+
+
+
+</body>
+
+</html>

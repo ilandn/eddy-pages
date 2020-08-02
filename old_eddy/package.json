@@ -16,7 +16,7 @@
     "history": "^4.6.3",
     "ramda": "^0.23.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.13.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-split-pane": "^0.1.84",
@@ -34,7 +34,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "html-webpack-plugin": "^2.26.0",
     "path": "^0.12.7",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2"
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.5"
   }
 }

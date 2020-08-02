@@ -57,16 +57,18 @@ function initGame() {
 	var cards = shuffle(symbols);
   $deck.empty();
   match = 0;
-  moves = 0;
+	moves = 0;
+	questions.alternativeAnswers = {0:'?', 1:'?', 2:'?', 3:'?'};
 	questions.newQuestion();
   $moveNum.html(moves);
   $ratingStars.removeClass('fa-star-o').addClass('fa-star');
 	for (var i = 0; i < cards.length; i++) {
 		$deck.append($('<li class="card"><i class="fa fa-' + cards[i] + '"></i></li>'))
 	}
+	
 	for (var i = 0; i < 4; i++) {
 		let btn = $('#btn'+i);
-		btn.html("?");
+		// btn.html("?");
 		btn.removeClass('open show match notmatch animated infinite rubberBand');
 	}
 };
@@ -140,7 +142,7 @@ $deck.on('click', '.card:not(".match, .open")', function() {
         $deck.find('.match').removeClass('open show animated infinite rubberBand');
       }, delay);
 			if (match < 4){
-				$('#btn'+match).html(questions.answers()[match]);
+				questions.overrideAnswers(match,questions.currentAnswers[match]);
 			}
       match++;
     } else {

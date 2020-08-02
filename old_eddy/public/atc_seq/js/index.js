@@ -10,7 +10,7 @@ var questions = initQuestions();
 // Initial Game
 function initGame() {
   questions.newQuestion();
-  if (!questions.answers()){
+  if (!questions.questionText()){
 	  endGame(moves);
 	  return;
   }

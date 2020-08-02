@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-registration-login-example",
+  "name": "eddyweb",
   "version": "1.0.0",
   "repository": {
     "type": "git",
@@ -7,17 +7,24 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "server": "http-server ./ -a 0.0.0.0 -p 80",
+    "build": "webpack"
   },
   "dependencies": {
+    "@u-wave/react-youtube": "^0.6.0",
     "history": "^4.6.3",
+    "ramda": "^0.23.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
+    "react-split-pane": "^0.1.84",
+    "react-splitter-layout": "^3.0.1",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "tachyons": "^4.6.2"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",

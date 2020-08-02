@@ -25,9 +25,9 @@ body {
   /*background-image: url("../images/p-1-guardians-opening-vol-2.jpg");*/
 }
 .container {
-    width: 30%;
+    width: 22%;
     height: 0;
-    padding-top: 35%;
+    padding-top: 10%;
     position: relative;
 }
 
@@ -36,7 +36,17 @@ svg {
     top: 0;
     left: 0;
 }
+.answer_input{
+  color: black;
+}
+.answer_input.match{
+  color: green;
+}
+.answer_input.notmatch{
+  color: #EE0E51;
+}
 .answer {
+  background-color: white;
   color: black;
   font-size: 30px;
   height: 75px;

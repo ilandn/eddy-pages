@@ -46,7 +46,12 @@ function initGame() {
   if (!questions.answers()){
 	  endGame(moves);
 	  return;
-  }
+	}
+	for (var i = 0; i < 4; i++) {
+		let btn = $('#btn'+i);
+		//console.log()
+		btn.removeClass('open show match notmatch animated infinite rubberBand');
+	}
   $moveNum.html(moves);
 };
 // End Game

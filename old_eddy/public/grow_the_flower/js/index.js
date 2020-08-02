@@ -1,4 +1,4 @@
-var 	moves = 0,
+var 	fl_moves = 0,
 		$scorePanel = $('#score-panel'),
 		$moveNum = $scorePanel.find('.moves'),
 		$restart = $scorePanel.find('.restart'),
@@ -19,9 +19,9 @@ function answer(answerNum){
 		btn.addClass('match animated infinite rubberBand');
       setTimeout(function() {
         btn.removeClass('open show animated infinite rubberBand');
-		moves+=1;
-		document.getElementById("flower").src="f1"+moves+".png";
-		$moveNum.html(moves);
+		fl_moves+=1;
+		document.getElementById("flower").src="f1"+fl_moves+".png";
+		$moveNum.html(fl_moves);
 				initGame();
       }, delay /2);
 		
@@ -45,14 +45,14 @@ function answer(answerNum){
 function initGame() {
   questions.newQuestion();
   if (!questions.answers()){
-	  endGame(moves);
+	  endGame(fl_moves);
 	  return;
   }
-  $moveNum.html(moves);
+  $moveNum.html(fl_moves);
 	for (var i = 0; i < 4; i++) {
 		let btn = $('#btn'+i);
 		//console.log()
-		btn.html(questions.answers()[i]);
+		//btn.html(questions.answers()[i]);
 		btn.removeClass('open show match notmatch animated infinite rubberBand');
 	}
 };

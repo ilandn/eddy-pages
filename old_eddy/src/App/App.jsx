@@ -6,7 +6,6 @@ import { history } from '../_helpers';
 import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_components';
 import { HomePage } from '../HomePage';
-import { HomePage2 } from '../HomePage2';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 
@@ -38,14 +37,13 @@ class App extends React.Component {
 					</div>
 				</div>
 				<div className="container" style={styles}>
-					<div className="ddd">
+					<div className="col-sm-8 col-sm-offset-2">
 						{alert.message &&
 							<div className={`alert ${alert.type}`}>{alert.message}</div>
 						}
 						<Router history={history}>
 							<div>
 								<PrivateRoute exact path="/" component={HomePage} />
-								<Route exact path="/home2" component={HomePage2} />
 								<Route path="/login" component={LoginPage} />
 								<Route path="/register" component={RegisterPage} />
 							</div>
@@ -56,7 +54,6 @@ class App extends React.Component {
         );
     }
 }
-//col-sm-8 col-sm-offset-2
 
 function mapStateToProps(state) {
     const { alert } = state;

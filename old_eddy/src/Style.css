@@ -1091,10 +1091,9 @@ th {
 }
 *:before,
 *:after {
-  margin:0px;
-  /*-webkit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
-          box-sizing: border-box;*/
+          box-sizing: border-box;
 }
 html {
   font-size: 10px;
@@ -1602,19 +1601,11 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
-
-@media (min-width: 375px) {
-  .container {
-    width: 350px;
-  }
-}
-
-
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -6788,25 +6779,5 @@ button.close {
   .hidden-print {
     display: none !important;
   }
-}
-.circle-background,
-.circle-progress {
-  fill: none;
-}
-
-.circle-background {
-  stroke: #ddd;
-}
-
-.circle-progress {
-  stroke: lightskyblue;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.circle-text {
-  font-size: 1.5em;
-  font-weight: bold;
-  fill: lightskyblue;
 }
 /*# sourceMappingURL=bootstrap.css.map */

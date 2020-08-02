@@ -1,4 +1,4 @@
-var 	fls_moves = 0,
+var 	moves = 0,
 		currentQuestionsMoves=0,
 		$scorePanel = $('#score-panel'),
 		$moveNum = $scorePanel.find('.moves'),
@@ -10,13 +10,13 @@ var questions = initQuestions();
 // Initial Game
 function initGame() {
   questions.newQuestion();
-  fls_moves += currentQuestionsMoves;
+  moves += currentQuestionsMoves;
   currentQuestionsMoves = 0;
-  if (!questions.questionText()){
-	  endGame(fls_moves);
+  if (!questions.answers()){
+	  endGame(moves);
 	  return;
   }
-  $moveNum.html(fls_moves);
+  $moveNum.html(moves);
 	for (var i = 0; i < 4; i++) {
 		let btn = $('#btn'+i);
 		//console.log()
@@ -82,8 +82,8 @@ function myFunction() {
 		console.log("Wrong"+x.toLowerCase().substring(0,x.length));
 		//moves= moves > 0? moves -1: moves;
 	}
-		document.getElementById("flower").src="f1"+(fls_moves%8+currentQuestionsMoves)+".png";
-		$moveNum.html(fls_moves+currentQuestionsMoves);
+		document.getElementById("flower").src="f1"+(moves+currentQuestionsMoves)+".png";
+		$moveNum.html(moves+currentQuestionsMoves);
 }
 $('#answer_input').on('input', myFunction);
 

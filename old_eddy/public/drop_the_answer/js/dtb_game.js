@@ -20,17 +20,13 @@ var answersBoxes=[];
 var platformSprite;
 var platformSprite_h;
 var already_hit=false;
-var scaleW=1;
-var scalH=1;
-var w=window.innerWidth;
-var h=window.innerHeight;
 function update() {
 	
-	if (game.input.activePointer.isUp)
+	if (game.input.mousePointer.isUp)
 		new_rec=true;
 		
     //  only move when you clic
-    if (game.input.activePointer.isDown)
+    if (game.input.mousePointer.isDown)
     {
 		if (new_rec===true){
 			new_rec=false;
@@ -68,16 +64,11 @@ function create() {
 	game.physics.box2d.debugDraw.centerOfMass = false;
 	
     
-	scaleW = Math.min(window.innerWidth,800) / 800;
-	scaleH = Math.min(window.innerHeight,500) / 500;
-	console.log('window.innerWidth * window.devicePixelRatio', window.innerWidth * window.devicePixelRatio);
-	console.log('window.innerWidth', window.innerWidth );
-	
+
     // Static platform 
-	platformSprite = game.add.sprite(390, 400, 'platform');
-	console.log('w',w,'sclaeW',scaleW,'w/2-100*scaleW',w/2-100*scaleW);
-	platformSprite.scale.setTo(1.4*scaleW, 0.5*scaleH);
-	platformSprite_h = platformSprite.getBounds().height*scaleH;
+	platformSprite = game.add.sprite(400, 400, 'platform');
+	platformSprite.scale.setTo(1, 0.5);
+	platformSprite_h = platformSprite.getBounds().height;
 	game.physics.box2d.enable(platformSprite);
 	platformSprite.body.static = true;
    // game.add.text(5, 5, 'Different restitution settings.', { fill: '#ffffff', font: '14pt Arial' });
@@ -98,8 +89,8 @@ function localCreate(){
 	already_hit=false;
 	game.physics.box2d.gravity.y = 0;
 	for (var i = 0; i < 4; i++){
-		var answer1 = game.add.sprite(400-325*scaleW+i*195*scaleW, platformSprite.y-platformSprite_h/2-25, 'answers',i);
-		answer1.scale.setTo(0.5*scaleW, 0.5*scaleH);
+		var answer1 = game.add.sprite(202+i*131, platformSprite.y-platformSprite_h/2-25, 'answers',i);
+		answer1.scale.setTo(0.5, 0.5);
 		game.physics.box2d.enable(answer1);
 		answer1.body.setCollisionCategory(2);
 		answer1.body.answerId = i;
@@ -109,18 +100,15 @@ function localCreate(){
 		answer1.y +answer1.getBounds().height/2-15, 0);
 		game.physics.box2d.enable(tower);
 		tower.setRectangle(5, 16);
-		//tower.scale.setTo(scaleW, scaleH);
 		bodies.push(tower);
 		tower.static = false;
 	}
 
     // Sprites for dynamic bodies
-    ballSprite = game.add.sprite(400-325*scaleW+Math.floor(Math.random() * 700)*scaleW, 100, 'ball');
+    ballSprite = game.add.sprite(50+Math.floor(Math.random() * 700), 100, 'ball');
     //  Enable physics. This creates a default rectangular body.
     game.physics.box2d.enable([ ballSprite]);
 	ballSprite.body.type=0;
-	console.log('Math.min(scaleW, scaleH)',Math.min(scaleW, scaleH))
-	//ballSprite.scale.setTo(Math.min(scaleW, scaleH),Math.min(scaleW, scaleH));
 	ballSprite.body.setCircle(ballSprite.width / 2);
 	ballSprite.body.setCategoryContactCallback(2, hitTheAnswer, this);
 	
@@ -128,7 +116,7 @@ function localCreate(){
     
     //  Adjust the gravity scale
     ballSprite.body.restitution = 0.6;
-	button = game.add.button(game.world.centerX - 95, 40, 'button', actionOnClick, this, 'down', 'down', 'down');
+	button = game.add.button(game.world.centerX - 95, 20, 'button', actionOnClick, this, 'down', 'down', 'down');
 	button.scale.setTo(0.5, 0.5);
 }
 function hitTheAnswer(body1, body2, fixture1, fixture2, begin) {

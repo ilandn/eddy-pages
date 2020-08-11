@@ -1,0 +1,26 @@
+.like {
+    display: block;
+    width: 110px; 
+    height: 110px;
+    margin:0 auto;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/349115/like_animation.png) 0 0 no-repeat;
+    background-size: 3000%;
+    animation: like-gif steps(28) 1s infinite both;
+}
+.pause {
+    animation-play-state: paused;
+}
+div {
+  width:100px;
+  margin:0 auto;
+  text-align:center;
+}
+
+@keyframes like-gif {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}

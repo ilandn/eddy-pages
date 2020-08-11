@@ -1,4 +1,4 @@
-import servicesConfig from "config";
+import servicesConfig from "./config";
 import { authHeader } from "../_helpers";
 
 export const userService = {
@@ -152,7 +152,7 @@ function handleResponse(response) {
       if (response.status === 401) {
         // auto logout if 401 response returned from api
         logout();
-        location.reload(true);
+        window.location.reload(true);
       }
 
       const error = (data && data.message) || response.statusText;

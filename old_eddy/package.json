@@ -9,15 +9,16 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "server": "http-server ./ -a 0.0.0.0 -p 80",
-    "build": "webpack"
+    "build": "react-scripts build"
   },
   "dependencies": {
     "@u-wave/react-youtube": "^0.6.0",
     "history": "^4.6.3",
     "ramda": "^0.23.0",
-    "react": "^16.0.0",
+    "react": "^16.5.0",
     "react-dom": "^16.13.1",
     "react-redux": "^5.0.5",
+    "react-scripts": "1.1.5",
     "react-router-dom": "^4.1.2",
     "react-split-pane": "^0.1.84",
     "react-splitter-layout": "^3.0.1",

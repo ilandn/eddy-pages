@@ -16,7 +16,7 @@ function play() {
   var token = localStorage.getItem("token");
   if (token === null) return Promise.reject(0);
   try {
-    xhttp.open("GET", `http://localhost:8080/eddy/api/play`, false);
+    xhttp.open("GET", `https://io.eddygames.net/eddy/api/play`, false);
     xhttp.setRequestHeader("x-auth-token", token);
     xhttp.send();
 
@@ -54,7 +54,7 @@ function login(username, password) {
   //        });
   var xhttp = new XMLHttpRequest();
 
-  xhttp.open("POST", `http://localhost:8080/eddy/api/login`, false);
+  xhttp.open("POST", `https://io.eddygames.net/eddy/api/login`, false);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   //xhttp.send('{"username": "Amit", "password": "Ed123456!"}');
   xhttp.send(JSON.stringify({ username: username, password: password }));
@@ -77,7 +77,7 @@ function updateAnswer(answer) {
   };
 
   return fetch(
-    `http://localhost:8080/eddy/api/question/answer`,
+    `https://io.eddygames.net/eddy/api/question/answer`,
     requestOptions
   ).then(handleResponse);
 }
@@ -93,7 +93,7 @@ function getAll() {
     headers: authHeader(),
   };
 
-  return fetch(`http://localhost:8080/users`, requestOptions).then(
+  return fetch(`https://io.eddygames.net/users`, requestOptions).then(
     handleResponse
   );
 }
@@ -104,7 +104,7 @@ function getById(id) {
     headers: authHeader(),
   };
 
-  return fetch(`http://localhost:8080/users/${id}`, requestOptions).then(
+  return fetch(`https://io.eddygames.net/users/${id}`, requestOptions).then(
     handleResponse
   );
 }
@@ -116,7 +116,7 @@ function register(user) {
     body: JSON.stringify(user),
   };
 
-  return fetch(`http://localhost:8080/users/register`, requestOptions).then(
+  return fetch(`https://io.eddygames.net/users/register`, requestOptions).then(
     handleResponse
   );
 }
@@ -128,7 +128,7 @@ function update(user) {
     body: JSON.stringify(user),
   };
 
-  return fetch(`http://localhost:8080/users/${user.id}`, requestOptions).then(
+  return fetch(`https://io.eddygames.net/users/${user.id}`, requestOptions).then(
     handleResponse
   );
 }
@@ -140,7 +140,7 @@ function _delete(id) {
     headers: authHeader(),
   };
 
-  return fetch(`http://localhost:8080/users/${id}`, requestOptions).then(
+  return fetch(`https://io.eddygames.net/users/${id}`, requestOptions).then(
     handleResponse
   );
 }

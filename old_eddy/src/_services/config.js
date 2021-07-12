@@ -1,3 +1,3 @@
 export const servicesConfig = {
-  URL: "http://localhost:8080",
+  URL: "https://io.eddygames.net",
 };

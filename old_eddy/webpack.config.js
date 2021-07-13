@@ -2,9 +2,9 @@ var path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: "./src/index.js",
   output: {
-    path: "C:\\app\\main\\eddyweb",
+    path: "C:\\Eddy\\eddy-pages\\old_eddy",
     filename: "bundle.js",
   },
   resolve: {

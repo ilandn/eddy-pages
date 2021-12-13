@@ -1,15 +1,11 @@
-
-
 function initQuestions(questionUI) {
-	var params = location.href.split('?')[1].split('&');
-	var data = {};
-	for (x in params) {
-		data[params[x].split('=')[0]] = decodeURIComponent(params[x].split('=')[1]);
-	}
+	// var params = location.href.split('?')[1].split('&');
+	//window.localStorage.setItem("access_token", "eyJ1c2VybmFtZSI6IkF5YSIsInJvbGUiOiJST0xFX0NISUxEIiwiY3JlYXRlZCI6MTYyNjM3NzUyNDc0MCwiZXhwaXJlIjoxNjI2NDA2MzI0NzQwfQ==.yOikyZ41FvsGDJxE2FsQamS1RLzY0Qs37hxlPY0LR/g=")
+	// console.log(data);
 	if (!questionUI) {
 		questionUI = new GenericQuestionUI();
 	}
-	var questions = new Questions(JSON.parse(data.questions), questionUI);
+	var questions = new Questions(questionUI);
 	return questions;
 }
 
@@ -123,14 +119,15 @@ function standartize(x) {
 		return ret;
 }
 
-function Questions(questions, questionUI) {
-	this.questionUI = questionUI;
-	this.questions = questions;
+function Questions(questionUI) {
+	this.eddy_sdk = window.EddySdk;
+	this.questions = window.gamePlayerContainer.state.gameContext.currentQuestions;
 	this.currentQuestion = null;
 	this.currentAnswers = null;
 	this.currentRightAnswerIdx = null;
 	this.questionIdx = -1;
 	this.alternativeAnswers = null;
+	this.last_answer_was_correct = null;
 	this.length = this.questions.length;
 	this.rightAnswer = function () {
 		if (this.currentQuestion && this.currentQuestion.data) {
@@ -173,22 +170,31 @@ function Questions(questions, questionUI) {
 			return false;
 	}
 
+	this.isCorrect = function(){
+		return this.last_answer_was_correct;
+	}
+
 	this.checkAnswer = function (answer) {
 		currentTime = new Date();
 		var diff = (currentTime - this.time);
 		let answerRight = standartize(answer) === this.rightAnswer();
-		var answerMsg = {
-			'replyTime': diff, 'isCorrect': answerRight,
-			"questionId": this.questions[this.questionIdx].id
-		}
-		var event = new CustomEvent('doneQuestion', { detail: answerMsg })
-		window.parent.document.dispatchEvent(event)
+		// var answerMsg = {
+			// 'replyTime': diff, 'isCorrect': answerRight,
+			// "questionId": this.questions[this.questionIdx].id
+		// }
+		// no needd anymore
+		// var event = new CustomEvent('doneQuestion', { detail: answerMsg })
+		// window.parent.document.dispatchEvent(event)
+		this.eddy_sdk.checkAnswer(this)
+		this.last_answer_was_correct = answerRight;
 		return answerRight;
 
 	}
 
 	this.newQuestion = function () {
 		this.questionIdx += 1;
+		//
+		this.eddy_sdk.getQuestion();
 		if (this.questionIdx < this.length) {
 			this.time = new Date();
 

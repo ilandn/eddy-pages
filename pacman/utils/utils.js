@@ -121,14 +121,12 @@ function standartize(x) {
 
 function Questions(questionUI) {
 	this.eddy_sdk = window.EddySdk;
-	this.questions = window.gamePlayerContainer.state.gameContext.currentQuestions;
 	this.currentQuestion = null;
 	this.currentAnswers = null;
 	this.currentRightAnswerIdx = null;
 	this.questionIdx = -1;
 	this.alternativeAnswers = null;
 	this.last_answer_was_correct = null;
-	this.length = this.questions.length;
 	this.rightAnswer = function () {
 		if (this.currentQuestion && this.currentQuestion.data) {
 			return standartize(this.currentQuestion.data.correctAnswer);
@@ -154,7 +152,7 @@ function Questions(questionUI) {
 			return this.currentAnswers;
 	};
 	this.questionText = function () {
-		if (this.questionIdx < this.length) {
+		if (this.currentQuestion) {
 			return this.currentQuestion.data.body;
 		}
 		else{
@@ -164,7 +162,7 @@ function Questions(questionUI) {
 
 
 	this.checkAnswerNum = function (answerNum) {
-		if (answerNum < this.currentAnswers.length)
+		if (this.currentQuestion)
 			return this.checkAnswer(this.currentAnswers[answerNum]);
 		else
 			return false;
@@ -192,25 +190,16 @@ function Questions(questionUI) {
 	}
 
 	this.newQuestion = function () {
-		this.questionIdx += 1;
-		//
-		this.eddy_sdk.getQuestion();
-		if (this.questionIdx < this.length) {
-			this.time = new Date();
+		this.time = new Date();
 
-			this.currentQuestion = this.questions[this.questionIdx];
+		this.currentQuestion = this.eddy_sdk.getQuestion();
 
-			if (this.currentQuestion.type == 'MULTIPLE_CHOICE') {
-				this.currentAnswers = this.currentQuestion.data.answers.map(standartize); //.split(",").map(Function.prototype.call, String.prototype.trim);
-				this.currentRightAnswerIdx = this.currentAnswers.indexOf(this.rightAnswer())
-			}
-			if (this.questionUI) {
-				this.questionUI.refresh(this, true);
-			}
+		if (this.currentQuestion.type == 'MULTIPLE_CHOICE') {
+			this.currentAnswers = this.currentQuestion.data.answers.map(standartize); //.split(",").map(Function.prototype.call, String.prototype.trim);
+			this.currentRightAnswerIdx = this.currentAnswers.indexOf(this.rightAnswer())
 		}
-		else {
-			var event = new CustomEvent('donePlaying', { detail: null })
-			window.parent.document.dispatchEvent(event)
+		if (this.questionUI) {
+			this.questionUI.refresh(this, true);
 		}
 	}
 }

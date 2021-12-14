@@ -1,3 +1,5 @@
+import EddySdk from './utils/index.js';
+
 function initQuestions(questionUI) {
 	// var params = location.href.split('?')[1].split('&');
 	//window.localStorage.setItem("access_token", "eyJ1c2VybmFtZSI6IkF5YSIsInJvbGUiOiJST0xFX0NISUxEIiwiY3JlYXRlZCI6MTYyNjM3NzUyNDc0MCwiZXhwaXJlIjoxNjI2NDA2MzI0NzQwfQ==.yOikyZ41FvsGDJxE2FsQamS1RLzY0Qs37hxlPY0LR/g=")
@@ -120,7 +122,7 @@ function standartize(x) {
 }
 
 function Questions(questionUI) {
-	this.eddy_sdk = eddy-sdk-web;
+	this.eddy_sdk = EddySdk;
 	this.currentQuestion = null;
 	this.currentAnswers = null;
 	this.currentRightAnswerIdx = null;

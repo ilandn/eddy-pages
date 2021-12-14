@@ -120,7 +120,7 @@ function standartize(x) {
 }
 
 function Questions(questionUI) {
-	this.eddy_sdk = window.EddySdk;
+	this.eddy_sdk = eddy-sdk-web;
 	this.currentQuestion = null;
 	this.currentAnswers = null;
 	this.currentRightAnswerIdx = null;

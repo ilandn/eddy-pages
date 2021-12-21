@@ -1,0 +1,156 @@
+html,
+
+body {
+  width: 100%;
+  height: 100%;
+}
+svg {
+  display: block;
+  margin: 50px auto;
+}
+
+#loader 
+{ fill: #0088cc }
+
+#border 
+{ fill: #00517a }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  font-family: 'Coda', cursive;
+  /*background-image: url("../images/p-1-guardians-opening-vol-2.jpg");*/
+}
+.container {
+    width: 30%;
+    height: 0;
+    padding-top: 35%;
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.answer {
+  color: black;
+  font-size: 30px;
+  height: 75px;
+  width: 75px;
+  border-radius: 8px;
+  margin: 0 8px 10px 0;
+}
+.answer.match {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  cursor: default;
+  background: #9BCB3C;
+  font-size: 33px;
+}
+.answer.notmatch {
+  background: #EE0E51;
+}
+
+.questionUI {
+  color: black;
+  font-size: 20px;
+}
+
+.deck {
+  width: 345px;
+  margin: 0 auto;
+  background: #90A4AE;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 14px 14px 0 0 #000000;
+}
+.deck .card {
+  height: 75px;
+  width: 75px;
+  background: #00796B;
+  display: inline-block;
+  margin: 0 15px 15px 0;
+  line-height: 140px;
+  font-size: 0;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 8px;
+  vertical-align: top;
+  cursor: pointer;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  font-family: FontAwesome;
+  line-height: 75px;
+}
+.deck .card:nth-child(4n) {
+  margin: 0 0 15px 0;
+}
+.deck .card:nth-child(n+13) {
+  margin: 0 15px 0 0;
+}
+.deck .card:nth-child(n+13):nth-child(4n) {
+  margin: 0;
+}
+.deck .card.open {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  background: #89C4FF;
+  cursor: default;
+}
+.deck .card.show {
+  font-size: 33px;
+}
+.deck .card.match {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  cursor: default;
+  background: #9BCB3C;
+  font-size: 33px;
+}
+.deck .card.notmatch {
+  background: #EE0E51;
+}
+
+#score-panel {
+  text-align: left;
+  width: 345px;
+  padding: 15px;
+  -moz-border-radius: 15px;
+border-radius: 15px;
+  background: rgba(255, 255, 255, 0.6);
+}
+#score-panel .stars {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+#score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+#score-panel .restart {
+  float: right;
+  cursor: pointer;
+}
+
+*::-moz-selection {
+  background: transparent;
+}
+
+*::selection {
+  background: transparent;
+}
+
+.swal2-overlay {
+  background-color: white;
+}

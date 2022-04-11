@@ -9,7 +9,7 @@ Candy.Boot.prototype = {
 		// set scale options
 		this.input.maxPointers = 1;
 		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-		this.scale.pageAlignHorizontally = true;
+		this.scale.pageAlignHorizontally = false;
 		this.scale.pageAlignVertically = true;
 		this.scale.setScreenSize(true);
 		// start the Preloader state

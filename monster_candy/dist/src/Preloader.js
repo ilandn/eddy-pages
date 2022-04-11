@@ -22,6 +22,9 @@ Candy.Preloader.prototype = {
 		this.load.spritesheet('abc', 'img/abc.png', 50, 85);
 		this.load.spritesheet('monster-idle', 'img/monster-idle.png', 103, 131);
 		this.load.spritesheet('button-start', 'img/button-start.png', 401, 143);
+		this.load.bitmapFont('carrier_command', 'assets/fonts/bitmapFonts/carrier_command.png', 'assets/fonts/bitmapFonts/carrier_command.xml');
+
+
 	},
 	create: function(){
 		// start the MainMenu state

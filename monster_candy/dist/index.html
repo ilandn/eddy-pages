@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Phaser Box2D Example</title>
+  <script src="js/phaser-arcade-physics.min.js" type="text/javascript"></script>
+  <script src="js/box2d-plugin-full.min.js" type="text/javascript"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src="../utils/utils.js" type="text/javascript"></script>
+  <script src="js/dtb_game.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="../dist/css/style.css">
+</head>
+
+<body>
+
+  <div>
+    <div id="score-panel" >
+      <div id=question style="padding-top:5%;">Question</div>
+      <table width="100%">
+        <tr>
+          <td id=answer0 bgcolor="yellow" style="color: red;" width="25%">Jill</td>
+          <td id=answer1 bgcolor="lightcoral" style="color:black;" width="25%">Jill</td>
+          <td id=answer2 bgcolor="gray" style="color: white;" width="25%">Jill</td>
+          <td id=answer3 bgcolor="#16cfcf" style="color: white;" width="25%">Jill</td>
+        </tr>
+        </tr>
+      </table>
+    </div>
+    <script type="text/javascript">
+
+      var game = new Phaser.Game(800, 500, Phaser.CANVAS, 'phaser-example', { preload: preload, render: render, create: create, update: update }, true);
+    </script>
+  </div>
+</body>
+
+</html>

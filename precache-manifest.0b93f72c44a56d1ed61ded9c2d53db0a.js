@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "81fd374493f3f75cb70e",
-    "url": "./static/js/main.81fd3744.chunk.js"
+    "revision": "148afeaf192210cf3679",
+    "url": "./static/js/main.148afeaf.chunk.js"
   },
   {
     "revision": "8c97409f0ee389fe75da",
@@ -20,10 +20,6 @@ self.__precacheManifest = [
     "url": "./static/media/Marketplace.9c861c7c.jpg"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "./static/media/fontawesome-webfont.674f50d2.eot"
-  },
-  {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
     "url": "./static/media/fontawesome-webfont.af7ae505.woff2"
   },
@@ -36,11 +32,15 @@ self.__precacheManifest = [
     "url": "./static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "./static/media/fontawesome-webfont.674f50d2.eot"
+  },
+  {
     "revision": "912ec66d7572ff821749319396470bde",
     "url": "./static/media/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "b8b6f134419774186fe2aa1e607de1de",
+    "revision": "f70bcc68f7f908c8dc811e133ba5dc79",
     "url": "./index.html"
   }
 ];

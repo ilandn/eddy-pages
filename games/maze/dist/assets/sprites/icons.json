@@ -1,0 +1,30 @@
+{
+    "frames": [
+        {
+            "filename": "left",
+            "frame": { "x": 221, "y": 554, "w": 64, "h": 64 },
+            "rotated": false,
+            "trimmed": false
+        },
+        {
+            "filename": "right",
+            "frame": { "x": 221, "y": 480, "w": 64, "h": 64 },
+            "rotated": false,
+            "trimmed": false
+        },
+
+        {
+            "filename": "up",
+            "frame": { "x": 221, "y": 628, "w": 64, "h": 64 },
+            "rotated": false,
+            "trimmed": false
+        },
+        {
+            "filename": "empty",
+            "frame": { "x": 221, "y": 36, "w": 64, "h": 64 },
+            "rotated": false,
+            "trimmed": false
+        }
+    ],
+    "meta": {}
+}

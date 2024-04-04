@@ -47374,7 +47374,7 @@ function QuestionUI() {
         };
 
         //return fetch(`http://localhost:8080/users/authenticate`, requestOptions)
-        //	return fetch(`http://54.145.214.70:8080/eddy/api/login`, requestOptions)
+        //	return fetch(`http://54.145.214.70:8080/api/login`, requestOptions)
         //        .then(handleResponse)
         //       .then(user => {
         // login successful if there's a jwt token in the response

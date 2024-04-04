@@ -16,7 +16,7 @@ function play() {
   var token = localStorage.getItem("token");
   if (token === null) return Promise.reject(0);
   try {
-    xhttp.open("GET", `https://api.eddygames.net/eddy/api/play`, false);
+    xhttp.open("GET", `https://api.eddygames.net/api/play`, false);
     xhttp.setRequestHeader("x-auth-token", token);
     xhttp.send();
 
@@ -54,7 +54,7 @@ function login(username, password) {
   //        });
   var xhttp = new XMLHttpRequest();
 
-  xhttp.open("POST", `https://api.eddygames.net/eddy/api/login`, false);
+  xhttp.open("POST", `https://api.eddygames.net/api/login`, false);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   //xhttp.send('{"username": "Amit", "password": "Ed123456!"}');
   xhttp.send(JSON.stringify({ username: username, password: password }));
@@ -77,7 +77,7 @@ function updateAnswer(answer) {
   };
 
   return fetch(
-    `https://api.eddygames.net/eddy/api/question/answer`,
+    `https://api.eddygames.net/api/question/answer`,
     requestOptions
   ).then(handleResponse);
 }

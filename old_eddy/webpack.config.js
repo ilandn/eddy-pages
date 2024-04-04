@@ -37,7 +37,7 @@ module.exports = {
   externals: {
     // global app config object
     config: JSON.stringify({
-      apiUrl: "http://io.eddygames.net",
+      apiUrl: "http://api.eddygames.net",
     }),
   },
 };

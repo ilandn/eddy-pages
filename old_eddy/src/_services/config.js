@@ -1,3 +1,3 @@
 export const servicesConfig = {
-  URL: "https://io.eddygames.net",
+  URL: "https://api.eddygames.net",
 };

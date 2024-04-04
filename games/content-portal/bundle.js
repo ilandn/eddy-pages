@@ -102829,7 +102829,7 @@ function addDocument(doc) {
         body: JSON.stringify(doc)
     };
 
-    return fetch("https://io.eddygames.net/eddy/api/document", requestOptions).then(handleResponse);
+    return fetch("https://api.eddygames.net/eddy/api/document", requestOptions).then(handleResponse);
 }
 
 function assignDoc(assignment) {
@@ -102840,7 +102840,7 @@ function assignDoc(assignment) {
         body: JSON.stringify(assignment)
     };
 
-    return fetch("https://io.eddygames.net/eddy/api/parent/assign-document", requestOptions).then(handleResponse);
+    return fetch("https://api.eddygames.net/eddy/api/parent/assign-document", requestOptions).then(handleResponse);
 }
 
 function removeDocAssignment(assignment) {
@@ -102851,7 +102851,7 @@ function removeDocAssignment(assignment) {
         body: JSON.stringify(assignment)
     };
 
-    return fetch("https://io.eddygames.net/eddy/api/parent/remove-document", requestOptions).then(handleResponse);
+    return fetch("https://api.eddygames.net/eddy/api/parent/remove-document", requestOptions).then(handleResponse);
 }
 
 function updateDocument(doc) {
@@ -102862,7 +102862,7 @@ function updateDocument(doc) {
         body: JSON.stringify(doc)
     };
 
-    return fetch("https://io.eddygames.net/eddy/api/document", requestOptions).then(handleResponse);
+    return fetch("https://api.eddygames.net/eddy/api/document", requestOptions).then(handleResponse);
 }
 
 function getUserDocuments(withQuestion) {
@@ -102872,7 +102872,7 @@ function getUserDocuments(withQuestion) {
         headers: { 'Content-Type': 'application/json', "x-auth-token": token }
     };
 
-    if (withQuestion) return fetch("https://io.eddygames.net/eddy/api/document?withQuestions=true", requestOptions).then(handleResponse);else return fetch("https://io.eddygames.net/eddy/api/document?withQuestions=false", requestOptions).then(handleResponse);
+    if (withQuestion) return fetch("https://api.eddygames.net/eddy/api/document?withQuestions=true", requestOptions).then(handleResponse);else return fetch("https://api.eddygames.net/eddy/api/document?withQuestions=false", requestOptions).then(handleResponse);
 }
 
 function getDocChildAssignments() {
@@ -102882,7 +102882,7 @@ function getDocChildAssignments() {
         headers: { "x-auth-token": token }
     };
 
-    return fetch("https://io.eddygames.net/eddy/api/parent/child", requestOptions).then(handleResponse);
+    return fetch("https://api.eddygames.net/eddy/api/parent/child", requestOptions).then(handleResponse);
 }
 
 function play() {
@@ -102890,7 +102890,7 @@ function play() {
     var token = localStorage.getItem('token');
     if (token === null) return Promise.reject(0);
     try {
-        xhttp.open("GET", "https://io.eddygames.net/eddy/api/play", false);
+        xhttp.open("GET", "https://api.eddygames.net/eddy/api/play", false);
         xhttp.setRequestHeader("x-auth-token", token);
         xhttp.send();
 
@@ -102914,7 +102914,7 @@ function login(username, password) {
     };
 
     //return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
-    //	return fetch(`https://io.eddygames.net/eddy/api/login`, requestOptions)
+    //	return fetch(`https://api.eddygames.net/eddy/api/login`, requestOptions)
     //        .then(handleResponse)
     //       .then(user => {
     // login successful if there's a jwt token in the response
@@ -102927,7 +102927,7 @@ function login(username, password) {
     //        });
     var xhttp = new XMLHttpRequest();
 
-    xhttp.open("POST", "https://io.eddygames.net/eddy/api/login", false);
+    xhttp.open("POST", "https://api.eddygames.net/eddy/api/login", false);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(JSON.stringify({ "username": username, "password": password }));
 

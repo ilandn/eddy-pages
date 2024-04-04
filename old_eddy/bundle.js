@@ -47350,7 +47350,7 @@ function QuestionUI() {
         var token = localStorage.getItem("token");
         if (token === null) return Promise.reject(0);
         try {
-          xhttp.open("GET", "http://localhost:8080/eddy/api/play", false);
+          xhttp.open("GET", "http://localhost:8080/api/play", false);
           xhttp.setRequestHeader("x-auth-token", token);
           xhttp.send();
 
@@ -47374,7 +47374,7 @@ function QuestionUI() {
         };
 
         //return fetch(`http://localhost:8080/users/authenticate`, requestOptions)
-        //	return fetch(`http://54.145.214.70:8080/eddy/eddy/api/login`, requestOptions)
+        //	return fetch(`http://54.145.214.70:8080/eddy/api/login`, requestOptions)
         //        .then(handleResponse)
         //       .then(user => {
         // login successful if there's a jwt token in the response
@@ -47388,7 +47388,7 @@ function QuestionUI() {
         //        });
         var xhttp = new XMLHttpRequest();
 
-        xhttp.open("POST", "http://localhost:8080/eddy/api/login", false);
+        xhttp.open("POST", "http://localhost:8080/api/login", false);
         xhttp.setRequestHeader(
           "Content-type",
           "application/x-www-form-urlencoded"
@@ -47417,7 +47417,7 @@ function QuestionUI() {
         };
 
         return fetch(
-          "http://localhost:8080/eddy/api/question/answer",
+          "http://localhost:8080/api/question/answer",
           requestOptions
         ).then(handleResponse);
       }
